@@ -27,15 +27,15 @@ services:
       CORS_ALLOWED_ORIGINS: '.*'
     tty: true
     stdin_open: true
-  # web:
-  #   build:
-  #     context: ./web
-  #     dockerfile: containers/development/Dockerfile
-  #   command: /bin/sh -c "./scripts/create_fcm_sw; yarn install && yarn dev"
-  #   ports:
-  #     - '8000:8000'
-  #   volumes:
-  #     - ./web:/app
-  #     - /app/node_modules
-  #   env_file:
-  #     - ./web/config/env.development
+  web:
+    build:
+      context: ./web
+      dockerfile: containers/development/Dockerfile
+    command: /bin/sh -c "yarn install && yarn dev"
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+    # env_file:
+    #   - ./web/config/env.development

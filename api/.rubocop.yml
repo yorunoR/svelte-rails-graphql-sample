@@ -1,0 +1,16 @@
+AllCops:
+  Exclude:
+    # 自動生成されるものはチェック対象から除外する
+    - db/schema.rb
+    - bin/*
+    - vendor/bundle/**/* # CircleCI上のディレクトリ
+  DisplayCopNames: true
+
+##################### ##################### #####################
+# Missing top-level class documentation comment.
+Style/Documentation:
+  Enabled: false
+
+# Use nested module/class definitions instead of compact style.
+Style/ClassAndModuleChildren:
+  Enabled: false

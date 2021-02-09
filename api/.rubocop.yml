@@ -3,8 +3,10 @@ AllCops:
     # 自動生成されるものはチェック対象から除外する
     - db/schema.rb
     - bin/*
+    - lib/tasks/auto_annotate_models.rake
     - vendor/bundle/**/* # CircleCI上のディレクトリ
   DisplayCopNames: true
+  NewCops: enable
 
 ##################### ##################### #####################
 # Missing top-level class documentation comment.
@@ -14,3 +16,11 @@ Style/Documentation:
 # Use nested module/class definitions instead of compact style.
 Style/ClassAndModuleChildren:
   Enabled: false
+
+# Use only ascii symbols in comments.
+Style/AsciiComments:
+  Enabled: false
+
+# Method has too many lines.
+Metrics/MethodLength:
+  Max: 12
